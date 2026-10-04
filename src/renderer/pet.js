@@ -7,6 +7,10 @@ import './voice/audio-engine.js';
 const pet = document.getElementById('pet');
 const bubble = document.getElementById('bubble');
 
+// 形象资源：动画用于活动状态，静态图用于 SLEEP（省电且表示“睡着了”）
+const SRC_ANIM = '../../assets/pet_anim.apng';
+const SRC_STATIC = '../../assets/pet.png';
+
 // ── 鼠标穿透切换：悬停在形象上时窗口才接管鼠标 ──
 pet.addEventListener('mouseenter', () => {
   window.petBridge.setInteractive(true);
@@ -47,10 +51,15 @@ window.addEventListener('mouseup', () => {
   }
 });
 
-// ── 状态 → 外观 ──
+// ── 状态 → 外观与形象 ──
 bus.on('state:enter', ({ state }) => {
   pet.classList.toggle('hover', state === State.HOVER);
   pet.classList.toggle('sleep', state === State.SLEEP);
+
+  // SLEEP 换静态图并变暗；其他状态换回动画
+  const next = state === State.SLEEP ? SRC_STATIC : SRC_ANIM;
+  if (!pet.src.endsWith(next)) pet.src = next;
+
   if (state === State.SLEEP) bus.emit('state:enter:SLEEP-exit'); // 占位：正式版用专门 idle 触发器
 });
 

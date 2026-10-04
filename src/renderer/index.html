@@ -7,7 +7,7 @@
     #pet {
       width: 200px; margin: 20px;
       -webkit-app-region: no-drag;
-      transition: transform .15s ease;
+      transition: transform .15s ease, opacity .15s ease;
     }
     #pet.hover { transform: scale(1.06); }
     #pet.sleep { opacity: .55; transform: scale(.92); }
@@ -20,7 +20,8 @@
   </style>
 </head>
 <body>
-  <img id="pet" src="../../assets/pet.png" draggable="false" />
+  <!-- 默认播放待机动画（APNG）；SLEEP 状态由 pet.js 切换为静态图 -->
+  <img id="pet" src="../../assets/pet_anim.apng" draggable="false" />
   <div id="bubble"></div>
   <script type="module" src="./pet.js"></script>
 </body>
