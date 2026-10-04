@@ -1,0 +1,16 @@
+{
+  "name": "otto-desk-pet",
+  "version": "0.1.0",
+  "description": "桌面宠物「说的道理」—— 互动 + 语音包",
+  "main": "src/main/index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^33.0.0"
+  },
+  "dependencies": {
+    "chokidar": "^3.6.0",
+    "electron-store": "^10.0.0"
+  }
+}

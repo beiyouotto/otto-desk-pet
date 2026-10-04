@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    html, body { margin: 0; background: transparent; overflow: hidden; user-select: none; }
+    #pet {
+      width: 200px; margin: 20px;
+      -webkit-app-region: no-drag;
+      transition: transform .15s ease;
+    }
+    #pet.hover { transform: scale(1.06); }
+    #pet.sleep { opacity: .55; transform: scale(.92); }
+    #bubble {
+      position: absolute; left: 50%; bottom: 100%; transform: translateX(-50%);
+      max-width: 180px; padding: 6px 10px; border-radius: 8px;
+      background: rgba(0,0,0,.75); color: #fff; font: 13px/1.4 sans-serif;
+      display: none; white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <img id="pet" src="../../assets/pet.png" draggable="false" />
+  <div id="bubble"></div>
+  <script type="module" src="./pet.js"></script>
+</body>
+</html>

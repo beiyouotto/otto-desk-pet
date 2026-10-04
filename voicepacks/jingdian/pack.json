@@ -1,0 +1,22 @@
+{
+  "name": "经典语音包",
+  "version": "1.0.0",
+  "author": "beiyouotto",
+  "triggers": {
+    "on_startup": [
+      { "file": "sounds/startup.mp3", "weight": 1, "text": "大家好啊" }
+    ],
+    "on_click": [
+      { "file": "sounds/click-1.mp3", "weight": 3, "text": "卧槽" },
+      { "file": "sounds/click-2.mp3", "weight": 1, "text": "你干嘛" }
+    ],
+    "on_drag_start": [
+      { "file": "sounds/drag.mp3", "weight": 1, "text": "别拽我" }
+    ],
+    "on_drag_end": [],
+    "on_hover": [],
+    "on_idle": [
+      { "file": "sounds/idle.mp3", "weight": 1, "text": "说的道理~" }
+    ]
+  }
+}
