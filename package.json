@@ -4,10 +4,32 @@
   "description": "桌面宠物「说的道理」—— 互动 + 语音包",
   "main": "src/main/index.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.beiyouotto.otto-desk-pet",
+    "productName": "说的道理桌宠",
+    "files": [
+      "src/**/*",
+      "assets/**/*",
+      "voicepacks/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/pet.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "说的道理桌宠"
+    }
   },
   "devDependencies": {
-    "electron": "^33.0.0"
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0"
   },
   "dependencies": {
     "chokidar": "^3.6.0",

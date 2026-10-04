@@ -21,6 +21,25 @@ npm install
 npm start
 ```
 
+## 桌面快捷方式启动
+
+**开发模式**（免打包）：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/创建桌面快捷方式.ps1
+```
+
+桌面会出现「说的道理桌宠」快捷方式，双击即用 `npm start` 拉起应用。
+
+**打包分发**（推荐）：
+
+```bash
+npm run dist
+```
+
+产出 NSIS 安装包，安装时默认勾选「创建桌面快捷方式」，
+安装后双击桌面图标直接启动，不依赖 Node 环境。
+
 ## 文档
 
 - [架构设计](docs/ARCHITECTURE.md)
@@ -30,7 +49,8 @@ npm start
 
 ```
 ├── docs/                 # 架构与规范文档
-├── assets/               # 桌宠形象图片等资源
+├── assets/               # 桌宠形象（pet.png 主形象 / pet.ico 图标）
+├── scripts/              # 启动脚本与快捷方式创建脚本
 ├── voicepacks/           # 语音包（每个子目录一个语音包）
 └── src/
     ├── main/             # Electron 主进程：窗口、托盘、IPC
